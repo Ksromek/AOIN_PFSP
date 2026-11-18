@@ -8,3 +8,4 @@ results/*
 data/taillard/*
 !data/taillard/.gitkeep
 .ipynb_checkpoints/
+.idea/
