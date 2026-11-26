@@ -5,7 +5,7 @@ __pycache__/
 *.egg-info/
 results/*
 !results/.gitkeep
-data/taillard/*
-!data/taillard/.gitkeep
+_to_delete/
+data/taillard_generated/
 .ipynb_checkpoints/
 .idea/

@@ -113,7 +113,7 @@ def main(argv=None) -> None:
         if inst.name in best_known:
             ref, src = best_known[inst.name], "best_known_csv"
         elif args.objective == "makespan" and inst.upper_bound:
-            ref, src = inst.upper_bound, "file_ub_1993"
+            ref, src = inst.upper_bound, "file_ub"
         else:
             ref, src = None, "none"
         for algo in args.algorithms:

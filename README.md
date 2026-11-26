@@ -21,16 +21,21 @@ Zależności: NumPy, Numba, pycma, joblib (pytest do testów).
 
 ## Dane
 
-Instancje Taillarda [1] należy umieścić w `data/taillard/` (pliki w formacie
-`tai20_5.txt`, po dziesięć instancji w pliku). Instancja `tai20_5.txt` o indeksie 0
-ma w kodzie nazwę `tai20_5_0`. Pliki są dostępne na stronie autora; OR-Library
-udostępnia też generator z ziarnami wszystkich 120 instancji
-(https://www.brunel.ac.uk/~mastjjb/jeb/orlib/files/flowshop2.txt).
+Instancje Taillarda [1] pochodzą ze strony autora
+([Éric Taillard's page](https://mistic.iict-heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html)): 12 plików
+`data/taillard/tai<n>_<m>.txt`, po dziesięć instancji w pliku. Instancja
+`tai20_5.txt` o indeksie 0 (ta001) ma w kodzie nazwę `tai20_5_0`. Skrypt
+`scripts/generate_taillard.py` odtwarza te same macierze generatorem i ziarnami
+z [1] (ziarna za OR-Library: https://www.brunel.ac.uk/~mastjjb/jeb/orlib/files/flowshop2.txt);
+służy tylko do weryfikacji – wszystkie 120 macierzy jest zgodnych z plikami ze strony.
 
-Wartości referencyjne do obliczania RPD wpisuje się do `data/best_known_makespan.csv`
-i `data/best_known_tft.csv` (kolumny `instance,best_known`). Jeśli instancji nie ma
-w pliku, używane jest górne ograniczenie zapisane w pliku instancji; źródło wartości
-trafia do kolumny `ref_source` w wynikach.
+Wartością referencyjną do RPD dla makespanu jest najlepsze znane górne ograniczenie
+z zestawienia Taillarda `data/best_lb_up.txt` (stan z 03.06.2026), przepisane do
+`data/best_known_makespan.csv` (kolumny `instance,best_known,lower_bound,status`;
+108 instancji ma udowodnione optimum, 12 jest otwartych). Dla TFT wartości wpisuje
+się do `data/best_known_tft.csv`. Jeśli instancji nie ma w pliku CSV, używane jest
+górne ograniczenie z nagłówka pliku instancji; źródło wartości trafia do kolumny
+`ref_source` w wynikach.
 
 ## Uruchamianie eksperymentów
 
